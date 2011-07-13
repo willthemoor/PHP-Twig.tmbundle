@@ -602,7 +602,7 @@
         <key>twig-variable-tags</key>
         <dict>
             <key>begin</key>
-            <string>\{\{</string>
+            <string>\{\{-?</string>
             <key>beginCaptures</key>
             <dict>
                 <key>0</key>
@@ -612,7 +612,7 @@
                 </dict>
             </dict>
             <key>end</key>
-            <string>\}\}</string>
+            <string>-?\}\}</string>
             <key>endCaptures</key>
             <dict>
                 <key>0</key>
@@ -688,7 +688,7 @@
         <key>twig-expression-tags</key>
         <dict>
             <key>begin</key>
-            <string>\{%</string>
+            <string>\{%-?</string>
             <key>beginCaptures</key>
             <dict>
                 <key>0</key>
@@ -698,7 +698,7 @@
                 </dict>
             </dict>
             <key>end</key>
-            <string>%\}</string>
+            <string>-?%\}</string>
             <key>endCaptures</key>
             <dict>
                 <key>0</key>
@@ -778,7 +778,7 @@
         <key>twig-comment-tags</key>
         <dict>
             <key>begin</key>
-            <string>\{#</string>
+            <string>\{#-?</string>
             <key>beginCaptures</key>
             <dict>
                 <key>0</key>
@@ -788,7 +788,7 @@
                 </dict>
             </dict>
             <key>end</key>
-            <string>#\}</string>
+            <string>-?#\}</string>
             <key>endCaptures</key>
             <dict>
                 <key>0</key>
@@ -809,7 +809,7 @@
                 <!-- LANGUAGE -->
                 <dict>
                     <key>match</key>
-                    <string>(?&lt;=[\s\[\(\{:,])(?:true|false|none)(?=[\s\)\]\}\,])</string>
+                    <string>(?i)(?&lt;=[\s\[\(\{:,])(?:true|false|null|none)(?=[\s\)\]\}\,])</string>
                     <key>name</key>
                     <string>constant.language.twig</string>
                 </dict>
@@ -1374,7 +1374,7 @@
         <key>twig-keywords</key>
         <dict>
             <key>match</key>
-            <string>\s+((?:end)?if|(?:end)?for|(?:end)?spaceless|(?:end)?raw|(?:end)?block|extends|include|(?:end)?autoescape|else|elseif|(?:end)?macro|import|as|(?:end)?filter|(?:end)?set|with|from|only)\s+</string>
+            <string>(?&lt;=\s)((?:end)?if|(?:end)?for|(?:end)?spaceless|(?:end)?raw|(?:end)?block|extends|include|(?:end)?autoescape|else|elseif|(?:end)?macro|import|use|as|(?:end)?filter|(?:end)?set|with|from|only)(?=\s)</string>
             <key>name</key>
             <string>keyword.control.twig</string>
         </dict>
